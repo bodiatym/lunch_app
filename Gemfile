@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'hamlit-rails'
 
+gem 'devise'
+
 
 
 group :development, :test do
