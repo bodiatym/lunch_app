@@ -10,7 +10,7 @@ orbs:
 jobs:
   build: # our first job, named "build"
     docker:
-      - image: cimg/ruby:3.0-node # use a tailored CircleCI docker image.
+      - image: cimg/ruby:3.0.2-node # use a tailored CircleCI docker image.
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
@@ -30,7 +30,7 @@ jobs:
     parallelism: 3
     # here we set TWO docker images.
     docker:
-      - image: cimg/ruby:3.0-node # this is our primary docker image, where step commands run.
+      - image: cimg/ruby:3.0.2-node # this is our primary docker image, where step commands run.
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
@@ -63,8 +63,10 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
-          name: Database setup
-          command: bundle exec rails db:schema:load --trace
+          name: Database Setup
+          command: |
+            bundle exec rails db:create
+            bundle exec rails db:schema:load --trace    
       # Run rspec in parallel
       - ruby/rspec-test
       
