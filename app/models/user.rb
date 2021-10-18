@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   enum role: { basic: 0, admin: 1 }, _suffix: :role
   after_create :build_profile
-  has_one :profile, dependent: :destroy
+  has_one :profile, dependent: :destroy, class_name: 'Users::Profile'
 
   private
 
