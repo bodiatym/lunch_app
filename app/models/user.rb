@@ -11,6 +11,7 @@ class User < ApplicationRecord
   private
 
   def build_profile
-    User::Profile.create(user: self)
+    Users::Profile.create(user: self)
   end
+
 end
