@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Users
   class ProfilesController < ApplicationController
     before_action :set_profile
@@ -11,7 +13,7 @@ module Users
       end
     end
 
-    def show ; end
+    def show; end
 
     def set_profile
       @users_profile = Users::Profile.find_by(user_id: params[:id])
