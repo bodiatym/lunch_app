@@ -16,7 +16,7 @@ module Users
     def show; end
 
     def set_profile
-      @users_profile = Users::Profile.find_by(user_id: params[:id])
+      @users_profile = Users::Profile.find_by!(user_id: params[:id])
     end
 
     private
