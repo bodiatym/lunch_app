@@ -27,7 +27,7 @@ module Users
     end
 
     def authorize_profile!
-      authorize(@users_profile || ::Users::Profile)
+      authorize(@users_profile)
     end
   end
 end

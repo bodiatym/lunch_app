@@ -5,7 +5,7 @@ module Users
     end
 
     def show?
-      true
+      false
     end
   end
 end

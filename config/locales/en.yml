@@ -53,3 +53,5 @@ en:
   profile: "Profile"
   admin_panel: "Admin Panel"
   remember: "Remember me?"
+  flash:
+    not_authorized: "Dont have access"
