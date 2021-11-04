@@ -1,17 +1,17 @@
 %section.container
-  %h1 HELLO
-  %h1 TEST LUNCH APP
-  %h2 Links:
+  %h1= t('hello')
+  %h1= t('app_name')
+  %h2= t('links')
   %p
     - if signed_in?
 
-      %li= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm mt-10"
-      %li= link_to 'Profile',users_profile_path(current_user.id) ,method: :get, class: "btn btn-pimary btn-sm mt-10"
-      %li= link_to 'AdminPanel', rails_admin_path, class: "btn btn-pimary btn-sm mt-10"
+      %li= link_to t('log_out'), destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm mt-10"
+      %li= link_to t('profile'),users_profile_path(current_user.id) ,method: :get, class: "btn btn-pimary btn-sm mt-10"
+      %li= link_to t('admin_panel'), rails_admin_path, class: "btn btn-pimary btn-sm mt-10"
 
 
     - else
-      %li= link_to 'Profile',users_profiles_path ,method: :get, class: "btn btn-pimary btn-sm mt-10"
-      %li= link_to 'Login', new_user_session_path, class: "btn btn-pimary btn-sm mt-10"
-      %li= link_to 'Register', new_user_registration_path, class: "btn btn-primary btn-sm mt-10"
+      %li= link_to t('profile'),users_profiles_path ,method: :get, class: "btn btn-pimary btn-sm mt-10"
+      %li= link_to t('log_in'), new_user_session_path, class: "btn btn-pimary btn-sm mt-10"
+      %li= link_to t('sign_up'), new_user_registration_path, class: "btn btn-primary btn-sm mt-10"
 

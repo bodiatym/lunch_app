@@ -1,2 +1,2 @@
-%h1= current_user.name + " Profile"
-%li= link_to 'Home', home_path, class: "btn btn-pimary btn-sm mt-10"
+%h1= current_user.name + ' ' + t('profile')
+%li= link_to t('home'), home_path, class: "btn btn-pimary btn-sm mt-10"

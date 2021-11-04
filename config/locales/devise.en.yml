@@ -2,10 +2,20 @@
 
 en:
   devise:
+    account:
+      cancel: "Cancel my account"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      resend: "Resend confirmation instructions"
+      email:
+        confirm_link: "You can confirm your account email through the link below:"
+        unconfirmed_change_notification: "We're contacting you to notify you that your email is being changed to"
+        confirmed_change_notification: "We're contacting you to notify you that your email has been changed to"
+      confirm_account:
+        subject: 'Confirm my account'
+      wait: "Currently waiting confirmation for:"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -27,15 +37,22 @@ en:
         subject: "Email Changed"
       password_change:
         subject: "Password Changed"
+      ignore: "If you didn't request this, please ignore this email."
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
+      send_instructions_action: "Send me reset password instructions"
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      change: "Change password"
+      forgot: "Forgot your password? "
+      new: "New Password"
+      confirm: "Confirm password"
+
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -50,9 +67,12 @@ en:
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
     unlocks:
+      unlock_action: "Unlock my account'"
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      info: "Your account has been locked due to an excessive number of unsuccessful sign in attempts.
+            Click the link below to unlock your account:"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
