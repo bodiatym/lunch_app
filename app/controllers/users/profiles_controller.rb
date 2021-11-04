@@ -4,6 +4,7 @@ module Users
   class ProfilesController < ApplicationController
     before_action :set_profile
     before_action :authenticate_user!
+    before_action :authorize_profile!
 
     def index
       if user_signed_in?
@@ -23,6 +24,10 @@ module Users
 
     def profile_params
       params.require(:profile).permit(:id, :user_id)
+    end
+
+    def authorize_profile!
+      authorize(@users_profile || ::Users::Profile)
     end
   end
 end
