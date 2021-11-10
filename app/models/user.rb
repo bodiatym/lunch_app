@@ -11,6 +11,10 @@ class User < ApplicationRecord
   after_create :build_profile
   has_one :profile, dependent: :destroy, class_name: 'Users::Profile'
 
+  def owner?(obj)
+    obj.user == self
+  end
+
   private
 
   def build_profile

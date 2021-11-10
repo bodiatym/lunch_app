@@ -54,4 +54,4 @@ en:
   admin_panel: "Admin Panel"
   remember: "Remember me?"
   flash:
-    not_authorized: "Dont have access"
+    not_authorized: "You are not authorized to perform this action."

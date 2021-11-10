@@ -2,22 +2,14 @@
 
 module Users
   class ProfilesController < ApplicationController
-    before_action :set_profile
     before_action :authenticate_user!
+    before_action :set_profile
     before_action :authorize_profile!
 
-    def index
-      if user_signed_in?
-        redirect_to users_profile_path(current_user.id)
-      else
-        redirect_to new_user_registration_path
-      end
-    end
-
-    def show; end
+    def index; end
 
     def set_profile
-      @users_profile = ::Users::Profile.find_by!(user_id: params[:id])
+      @profile = ::Users::Profile.find_by!(user_id: params[:id]) if params[:id]
     end
 
     private
@@ -27,7 +19,7 @@ module Users
     end
 
     def authorize_profile!
-      authorize(@users_profile)
+      authorize(@profile || ::Users::Profile)
     end
   end
 end

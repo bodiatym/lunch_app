@@ -5,7 +5,7 @@ module Users
     end
 
     def show?
-      false
+      user.admin_role? || user.owner?(record)
     end
   end
 end
