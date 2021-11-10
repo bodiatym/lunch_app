@@ -29,6 +29,7 @@ AllCops:
     - db/**/*
     - app/queries/**/*
     - db/schema.rb
+    - app/controllers/registrations_controller.rb
 
 # Check with yard instead.
 Style/Documentation:

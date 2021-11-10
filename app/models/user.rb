@@ -8,16 +8,9 @@ class User < ApplicationRecord
     basic: BASIC = 'basic',
     admin: ADMIN = 'admin'
   }, _suffix: :role
-  after_create :build_profile
   has_one :profile, dependent: :destroy, class_name: 'Users::Profile'
 
   def owner?(obj)
     obj.user == self
-  end
-
-  private
-
-  def build_profile
-    ::Users::Profile.create(user: self)
   end
 end
