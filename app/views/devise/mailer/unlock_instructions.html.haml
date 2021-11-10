@@ -1,0 +1,6 @@
+%p
+  = t('welcome ')
+  = @resource.email
+  \!
+%p= t('devise.unlocks.info')
+%p= link_to t('devise.unlocks.unlock_action'), unlock_url(@resource, unlock_token: @token)

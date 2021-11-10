@@ -1,0 +1,14 @@
+%p
+  = t('welcome ')
+  = @email
+  \!
+- if @resource.try(:unconfirmed_email?)
+  %p
+    = t('devise.confirmations.email.unconfirmed_change_notification')
+    = @resource.unconfirmed_email
+    \.
+- else
+  %p
+    = t('devise.confirmations.email.confirmed_change_notification')
+    = @resource.email
+    \.

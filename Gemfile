@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'hamlit-rails'
 
+gem 'html2haml'
+
 gem 'devise'
 
 gem 'rails_admin', '~> 2.0'
