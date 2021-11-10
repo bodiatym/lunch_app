@@ -4,6 +4,7 @@ class ProfileCreatorService < ApplicationService
   attr_reader :user
 
   def initialize(user)
+    super()
     @user = user
   end
 
@@ -11,4 +12,3 @@ class ProfileCreatorService < ApplicationService
     Users::Profile.create(user: @user)
   end
 end
-
