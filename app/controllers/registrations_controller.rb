@@ -1,11 +1,7 @@
+# frozen_string_literal: true
+
 class RegistrationsController < Devise::RegistrationsController
-  def new
-    super
-  end
-
-  def create
-    build_resource(sign_up_params)
-
+  def create # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -25,9 +21,4 @@ class RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
   end
-
-  def update
-    super
-  end
-
 end

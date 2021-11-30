@@ -8,6 +8,7 @@ class User < ApplicationRecord
     basic: BASIC = 'basic',
     admin: ADMIN = 'admin'
   }, _suffix: :role
+
   has_one :profile, dependent: :destroy, class_name: 'Users::Profile'
 
   def owner?(obj)
