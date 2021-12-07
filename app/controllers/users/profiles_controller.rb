@@ -9,7 +9,7 @@ module Users
     def edit; end
 
     def update
-      if ::ProfileEditService.call(@profile, profile_params)
+      if @profile.update profile_params
         flash[:success] = t '.success'
         redirect_to users_profile_path(@profile)
       else
