@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  save: "Save"
   home: "Home"
   app_name: "LunchApp"
   hello: "Hello world"
