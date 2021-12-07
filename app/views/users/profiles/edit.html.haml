@@ -1,0 +1,21 @@
+%h1= t('edit') +'  ' + @profile.user.name + ' ' + t('profile')
+= form_with(model: @profile) do |f|
+  .field
+    =f.hidden_field :id, :value => @profile.id
+  .field
+    =f.hidden_field :user_id, :value => @profile.user_id
+  .field
+    = f.label :surname
+    %br/
+    = f.text_field :surname, autofocus: true, autocomplete: "surname"
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address, autofocus: true, autocomplete: "address"
+  .field
+    = f.label :phone
+    %br/
+    = f.text_field :phone, autofocus: true, autocomplete: "phone"
+
+    %br
+    = f.submit t('save')
