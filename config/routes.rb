@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/home' => 'pages#home'
+  get '/dashboard' => 'pages#dashboard'
 
   namespace :users do
     resource :profile, only: [:show, :update, :edit]
   end
+
+  resources :menus, only: [:show]
 
 end

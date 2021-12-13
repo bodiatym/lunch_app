@@ -12,9 +12,13 @@
   .field
     = f.label :phone
     %br/
+<<<<<<< HEAD
     = f.text_field :phone
 
     %br
     = f.submit t('save')
     
 %li= link_to t('profile', name: current_user.name), users_profile_path
+%p
+  %li= link_to t('home'), home_path, class: "btn btn-primary btn-sm mt-10"
+
