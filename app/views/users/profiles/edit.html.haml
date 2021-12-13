@@ -16,6 +16,8 @@
     = f.label :phone
     %br/
     = f.text_field :phone, autofocus: true, autocomplete: "phone"
-
+  
     %br
     = f.submit t('save')
+%p
+  %li= link_to t('home'), home_path, class: "btn btn-primary btn-sm mt-10"
