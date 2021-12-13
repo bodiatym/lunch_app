@@ -6,7 +6,6 @@ class MenusController < ApplicationController
   def show; end
 
   def set_menu
-    @menu = Menu.find_by!(id:params[:id])
+    @menu = Menu.find(params[:id])
   end
-
 end
