@@ -1,4 +1,2 @@
-%h1= @profile.user.name + ' ' + t('profile')
-%p
-  %li= link_to t('home'), home_path, class: "btn btn-primary btn-sm mt-10"
-  %li= link_to t('edit'), edit_users_profile_path, class: "btn btn-primary btn-sm mt-10"
+%h1=t('.profile', name: @profile.user.name)
+%li= link_to t('home'), home_path, class: "btn btn-primary btn-sm mt-10"

@@ -9,6 +9,6 @@ class ProfileCreatorService < ApplicationService
   end
 
   def call
-    Users::Profile.create(user: @user)
+    Users::Profile.create(user: user)
   end
 end
