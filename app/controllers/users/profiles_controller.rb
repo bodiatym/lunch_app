@@ -19,11 +19,11 @@ module Users
 
     def index; end
 
+    private
+
     def set_profile
       @profile = ::Users::Profile.find_by!(user_id: params[:id]) if params[:id]
     end
-
-    private
 
     def profile_params
       params.require(:users_profile).permit(:surname, :address, :phone, :id, :users_id)

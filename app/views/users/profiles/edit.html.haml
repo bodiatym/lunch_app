@@ -1,4 +1,4 @@
-%h1= t('edit') +'  ' + @profile.user.name + ' ' + t('profile')
+%h1= t('edit') + t('.profile', name: @profile.user.name)
 = form_with(model: @profile) do |f|
   .field
     =f.hidden_field :id, :value => @profile.id
