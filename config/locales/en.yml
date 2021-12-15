@@ -30,4 +30,31 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  home: "Home"
+  app_name: "LunchApp"
   hello: "Hello world"
+  welcome: "Welcome"
+  edit: "Edit"
+  password: "Password"
+  update: "Update"
+  delete: "Delete"
+  create: "Create"
+  back: "Back"
+  sure: "Are you sure?"
+  name: "name"
+  helpers:
+    leave: "(leave blank if you don't want to change it)"
+  characters:
+    minimum: "Characters minimum"
+  links: "Links"
+  sign_up: "Sign-up"
+  log_in: "Log in"
+  log_out: "Logout"
+  users:
+    profiles:
+      show:
+        profile: "%{name} Profile"
+  admin_panel: "Admin Panel"
+  remember: "Remember me?"
+  flash:
+    not_authorized: "You are not authorized to perform this action."
