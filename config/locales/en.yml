@@ -35,7 +35,7 @@ en:
   app_name: "LunchApp"
   hello: "Hello world"
   welcome: "Welcome"
-  edit: "Edit"
+  edit: "Edit "
   password: "Password"
   update: "Update"
   delete: "Delete"
@@ -54,6 +54,8 @@ en:
   users:
     profiles:
       show:
+        profile: "%{name} Profile"
+      edit:
         profile: "%{name} Profile"
   admin_panel: "Admin Panel"
   remember: "Remember me?"
