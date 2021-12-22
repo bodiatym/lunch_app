@@ -9,7 +9,7 @@ module Users
     def edit; end
 
     def update
-      if @profile.update profile_params
+      if ::ProfileEditService.call(@profile, profile_params)
         flash[:success] = t '.success'
         redirect_to users_profile_path(@profile)
       else
@@ -17,16 +17,14 @@ module Users
       end
     end
 
-    def index; end
-
     private
 
     def set_profile
-      @profile = ::Users::Profile.find_by!(user_id: params[:id]) if params[:id]
+      @profile = ::Users::Profile.find(params[:id]) if params[:id]
     end
 
     def profile_params
-      params.require(:users_profile).permit(:surname, :address, :phone, :id, :users_id)
+      params.require(:users_profile).permit(:surname, :address, :phone, :id)
     end
 
     def authorize_profile!

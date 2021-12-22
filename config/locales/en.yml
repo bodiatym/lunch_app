@@ -53,9 +53,11 @@ en:
   log_out: "Logout"
   users:
     profiles:
+      edit_profile: 'Edit %{name} Profile'
       show:
         profile: "%{name} Profile"
   admin_panel: "Admin Panel"
   remember: "Remember me?"
   flash:
+    success: "Success"
     not_authorized: "You are not authorized to perform this action."
