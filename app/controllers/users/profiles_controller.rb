@@ -21,8 +21,6 @@ module Users
 
     private
 
-    private
-
     def set_profile
       @profile = ::Users::Profile.find(params[:id]) if params[:id]
     end
