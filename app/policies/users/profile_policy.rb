@@ -3,7 +3,7 @@
 module Users
   class ProfilePolicy < ApplicationPolicy
     def show?
-      true
+      user.admin_role? || user.owner?(record)
     end
 
     def edit?
