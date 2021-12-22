@@ -6,7 +6,9 @@ module Users
     before_action :set_profile
     before_action :authorize_profile!
 
-    def edit; end
+    def edit
+      @facade = ::Profiles::EditFacade.new(@profile)
+    end
 
     def update
       if ::Profiles::EditService.call(@profile, profile_params)
