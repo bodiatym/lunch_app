@@ -53,7 +53,8 @@ en:
   log_out: "Logout"
   users:
     profiles:
-      edit_profile: 'Edit %{name} Profile'
+      edit:
+        edit_profile: 'Edit %{name} Profile'
       show:
         profile: "%{name} Profile"
   admin_panel: "Admin Panel"
