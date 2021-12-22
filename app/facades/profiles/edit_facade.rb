@@ -4,12 +4,10 @@ module Profiles
   class EditFacade
     attr_reader :profile
 
+    delegate :id, to: :profile, prefix: true
+
     def initialize(profile)
       @profile = profile
-    end
-
-    def id
-      @id = profile.id
     end
 
     def user_name
