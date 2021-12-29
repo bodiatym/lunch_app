@@ -1,8 +1,6 @@
 %h1= t('.edit_profile', name: @facade.user_name)
 = form_with(model: @profile) do |f|
   .field
-    = f.hidden_field :id, value: @facade.profile_id
-  .field
     = f.label :surname
     %br/
     = f.text_field :surname
@@ -17,3 +15,7 @@
 
     %br
     = f.submit t('save')
+    
+%li= link_to t('profile', name: current_user.name), users_profile_path
+
+
