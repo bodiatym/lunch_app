@@ -9,4 +9,6 @@ class Item < ApplicationRecord
 
   has_many :menu_items, dependent: :restrict_with_error
   has_many :menus, through: :menu_items
+  has_many :order_items, dependent: :restrict_with_error
+  has_many :orders, through: :order_items
 end
