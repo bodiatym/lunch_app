@@ -6,4 +6,7 @@ class Item < ApplicationRecord
     main: MAIN = 'main',
     drink: DRINK = 'drink'
   }, _suffix: true
+
+  has_many :menu_items, dependent: :restrict_with_error
+  has_many :menus, through: :menu_items
 end
