@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Profiles
-  class CreatorService < ApplicationService
+  class CreateService < ApplicationService
     attr_reader :user
 
     def initialize(user)
