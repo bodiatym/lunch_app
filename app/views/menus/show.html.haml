@@ -1,12 +1,20 @@
 %section.container
 %h1= t('menu', day: @facade.menu_day_name)
-%h2 Firs course
--@menu.items.first_course.each do |item|
-  =item.name
-%h2 Main course
--@menu.items.main_course.each do |item|
-  =item.name
-%h2 Drink course
--@menu.items.drink_course.each do |item|
-  =item.name
+= form_with model: @menu do |f|
+  %h2 Firs course
+  -@menu.items.first_course.each do |item|
+    =f.radio_button :item, item
+    =f.label item.name
+    %br
+  %h2 Main course
+  -@menu.items.main_course.each do |item|
+    =f.radio_button :item1, item
+    =f.label item.name
+    %br
+  %h2 Drink course
+  -@menu.items.drink_course.each do |item|
+    =f.radio_button :item2, item
+    =f.label item.name
+    %br
+
 
