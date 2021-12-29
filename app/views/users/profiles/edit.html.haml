@@ -1,19 +1,19 @@
 %h1= t('.edit_profile', name: @facade.user_name)
 = form_with(model: @profile) do |f|
   .field
-    =f.hidden_field :id, value: @facade.profile.id
+    = f.hidden_field :id, value: @facade.profile_id
   .field
     = f.label :surname
     %br/
-    = f.text_field :surname, autofocus: true
+    = f.text_field :surname
   .field
     = f.label :address
     %br/
-    = f.text_field :address, autofocus: true
+    = f.text_field :address
   .field
     = f.label :phone
     %br/
-    = f.text_field :phone, autofocus: true
+    = f.text_field :phone
 
     %br
     = f.submit t('save')

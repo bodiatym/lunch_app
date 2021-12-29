@@ -6,7 +6,7 @@
   %p
     - if signed_in?
       %li= link_to t('log_out'), destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm mt-10"
-      %li= link_to t('profile', name: current_user.name),users_profile_path(current_user.profile.id) ,method: :get, class: "btn btn-primary btn-sm mt-10"
+      %li= link_to t('profile', name: current_user.name), users_profile_path(current_user.profile.id), class: "btn btn-primary btn-sm mt-10"
       %li= link_to t('admin_panel'), rails_admin_path, class: "btn btn-primary btn-sm mt-10"
 
 

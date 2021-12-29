@@ -5,12 +5,12 @@ module Users
     before_action :authenticate_user!
     before_action :set_profile
     before_action :authorize_profile!
+    before_action :set_edit_facade, only: %i[edit update]
 
-    def edit
-      @facade = ::Profiles::EditFacade.new(@profile)
-    end
+    def edit; end
 
     def update
+      @facade = ::Profiles::EditFacade.new(@profile)
       if ::Profiles::EditService.call(@profile, profile_params)
         flash[:success] = t '.success'
         redirect_to users_profile_path(@profile)
@@ -21,8 +21,12 @@ module Users
 
     private
 
+    def set_edit_facade
+      @facade = ::Profiles::EditFacade.new(@profile)
+    end
+
     def set_profile
-      @profile = ::Users::Profile.find(params[:id]) if params[:id]
+      @profile = ::Users::Profile.find(params[:id])
     end
 
     def profile_params

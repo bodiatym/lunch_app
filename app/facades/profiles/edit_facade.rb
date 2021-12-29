@@ -5,13 +5,15 @@ module Profiles
     attr_reader :profile
 
     delegate :id, to: :profile, prefix: true
+    delegate :user, to: :profile, prefix: true
 
     def initialize(profile)
       @profile = profile
     end
 
     def user_name
-      @user_name = profile.user.name
+      profile_user.name
     end
+
   end
 end

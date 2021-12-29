@@ -7,7 +7,7 @@ module Profiles
     def initialize(profile, params)
       super()
       @profile = profile
-      @params = params
+      @params  = params
     end
 
     def call
