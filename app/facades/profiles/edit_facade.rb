@@ -14,6 +14,5 @@ module Profiles
     def user_name
       profile_user.name
     end
-
   end
 end
