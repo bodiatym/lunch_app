@@ -1,2 +1,11 @@
 %section.container
-%h1= @menu.created_at.to_s+ ' ' + "Menu"
+%h1= @menu.id.to_s + ' ' + "Menu"
+%h2 Firs course
+-@menu.items.first_course.each do |item|
+  =item.name
+%h2 Main course
+-@menu.items.main_course.each do |item|
+  =item.name
+%h2 Drink course
+-@menu.items.drink_course.each do |item|
+  =item.name
