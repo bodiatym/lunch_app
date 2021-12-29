@@ -2,16 +2,12 @@
 
 module Users
   class ProfilePolicy < ApplicationPolicy
-    def index?
-      false
-    end
-
     def show?
-      user.admin_role? || user.owner?(record)
+      user.admin? || user.owner?(record)
     end
 
     def edit?
-      user.admin_role? || user.owner?(record)
+      user.admin? || user.owner?(record)
     end
 
     def update?

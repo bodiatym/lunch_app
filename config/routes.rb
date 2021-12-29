@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   root 'pages#home'
 
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/dashboard' => 'pages#dashboard'
 
   namespace :users do
-    resources :profiles, only: [:index, :show, :create, :update, :edit]
+    resources :profiles, only: [:show, :update, :edit]
   end
 
   resources :menus, only: [:show]
