@@ -11,7 +11,7 @@ module Users
 
     def update
       if ::Profiles::EditService.call(@profile, profile_params)
-        flash[:success] = t '.success_message'
+        flash[:success] = t ('.success_message')
         redirect_to users_profile_path(@profile)
       else
         render :edit
@@ -25,7 +25,7 @@ module Users
     end
 
     def set_profile
-      @profile = ::Users::Profile.find(current_user.profile.id)
+      @profile = current_user.profile
     end
 
     def profile_params
