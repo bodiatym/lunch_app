@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :profile, class: 'Users::Profile' do
     surname { 'test' }

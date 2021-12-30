@@ -33,7 +33,6 @@ RSpec.describe ::Profiles::EditService, type: :model do
       it 'change phone' do
         expect(profile.phone).to eq(updated_phone)
       end
-
     end
   end
 end
