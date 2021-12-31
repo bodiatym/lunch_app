@@ -2,49 +2,39 @@
 
 require 'rails_helper'
 
-RSpec.describe ::Profiles::EditService, type: :model do
-  describe '#call' do
-    let(:profile)         { create(:profile) }
-    let(:updated_surname) { 'Updated surname' }
-    let(:updated_phone)   { '0987654321' }
+RSpec.describe ::Profiles::EditService do
+  subject(:service) do
+    described_class.call(profile, updated_params)
+    profile.reload
+  end
 
-    let(:updated_params) do
-      {
-        surname: updated_surname,
-        phone: updated_phone
-      }
-    end
-    let(:invalid_params) do
-      {
-        surname: '1',
-        phone: 'abc'
-      }
-    end
+  let(:profile)         { create(:profile) }
+  let(:updated_surname) { 'Updated surname' }
+  let(:updated_phone)   { '0987654321' }
 
-    before do
-      described_class.call(profile, updated_params)
-    end
+  let(:updated_params) do
+    {
+      surname: updated_surname,
+      phone: updated_phone
+    }
+  end
+  let(:invalid_params) do
+    {
+      surname: 'a'
+    }
+  end
 
-    context 'when params are valid' do
-      it 'returns true' do
-        expect(described_class.call(profile, updated_params)).to eq(true)
-      end
-    end
+  it 'updates params' do
+    expect { service }.to change(profile, :surname)
+      .and change(profile, :phone)
+      .to(updated_phone)
+  end
 
-    context 'when params are not valid' do
-      it 'returns false' do
-        expect(described_class.call(profile, invalid_params)).to eq(false)
-      end
-    end
+  context 'with invalid params' do
+    let(:updated_params) { invalid_params }
 
-    context 'when updated' do
-      it 'change surname' do
-        expect(profile.surname).to eq(updated_surname)
-      end
-
-      it 'change phone' do
-        expect(profile.phone).to eq(updated_phone)
-      end
+    it "doesn't update params" do
+      expect { service }.not_to change(profile, :surname)
     end
   end
 end
