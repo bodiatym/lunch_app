@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe ::Profiles::EditService do
   subject(:service) do
-    described_class.call(profile, updated_params)
+    described_class.call(profile, params)
     profile.reload
   end
 
@@ -12,26 +12,24 @@ RSpec.describe ::Profiles::EditService do
   let(:updated_surname) { 'Updated surname' }
   let(:updated_phone)   { '0987654321' }
 
-  let(:updated_params) do
+  let(:params) do
     {
       surname: updated_surname,
       phone: updated_phone
     }
   end
-  let(:invalid_params) do
-    {
-      surname: 'a'
-    }
-  end
 
   it 'updates params' do
     expect { service }.to change(profile, :surname)
-      .and change(profile, :phone)
-      .to(updated_phone)
   end
 
   context 'with invalid params' do
-    let(:updated_params) { invalid_params }
+    let(:params) do
+      {
+        surname: 'b',
+        phone: '123'
+      }
+    end
 
     it "doesn't update params" do
       expect { service }.not_to change(profile, :surname)
