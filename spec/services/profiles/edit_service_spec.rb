@@ -15,12 +15,12 @@ RSpec.describe ::Profiles::EditService do
   let(:params) do
     {
       surname: updated_surname,
-      phone: updated_phone
+      phone:   updated_phone
     }
   end
 
   it 'updates params' do
-    expect { service }.to change(profile, :surname)
+    expect { service }.to change(profile, :surname).to(updated_surname)
   end
 
   context 'with invalid params' do

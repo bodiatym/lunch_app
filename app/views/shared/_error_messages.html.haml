@@ -1,0 +1,9 @@
+- if profile.errors.any?
+  #error_explanation
+    %h2
+      = t("errors.messages.not_saved",
+        count: profile.errors.count,
+        resource: profile.class.model_name.human.downcase)
+    %ul
+      - profile.errors.full_messages.each do |message|
+        %li= message
