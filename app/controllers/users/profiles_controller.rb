@@ -12,7 +12,7 @@ module Users
     def update
       return render :edit unless ::Profiles::EditService.call(@profile, profile_params)
 
-      flash[:success] = t('.success_message')
+      flash[:success] = t('flash.success')
 
       redirect_to users_profile_path(@profile)
     end

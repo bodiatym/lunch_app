@@ -11,5 +11,8 @@ FactoryBot.define do
     trait :admin do
       role { 'admin' }
     end
+    trait :with_profile do
+      association :profile, factory: :profile, strategy: :build
+    end
   end
 end

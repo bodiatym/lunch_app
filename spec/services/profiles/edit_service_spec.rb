@@ -15,7 +15,7 @@ RSpec.describe ::Profiles::EditService do
   let(:params) do
     {
       surname: updated_surname,
-      phone:   updated_phone
+      phone: updated_phone
     }
   end
 
