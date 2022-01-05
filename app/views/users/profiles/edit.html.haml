@@ -1,6 +1,6 @@
 %h1= t('.edit_profile', name: @facade.user_name)
 = form_with(model: @profile) do |f|
-  = render "shared/error_messages", profile: @profile
+  = render "shared/error_messages", object: @profile
   .field
     = f.label :surname
     %br/
