@@ -5,6 +5,8 @@ class MenusController < ApplicationController
 
   def show; end
 
+  private
+
   def set_menu
     @menu = Menu.find(params[:id])
   end
