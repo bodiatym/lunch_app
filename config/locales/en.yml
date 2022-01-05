@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  save: "Save"
   home: "Home"
   app_name: "LunchApp"
   hello: "Hello world"
@@ -52,9 +53,12 @@ en:
   log_out: "Logout"
   users:
     profiles:
+      edit:
+        edit_profile: "Edit %{name} Profile"
       show:
         profile: "%{name} Profile"
   admin_panel: "Admin Panel"
   remember: "Remember me?"
   flash:
+    success: "Success"
     not_authorized: "You are not authorized to perform this action."

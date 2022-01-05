@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home'
 
   namespace :users do
-    resources :profiles, only: [:index, :show, :create, :update]
+    resource :profile, only: [:show, :update, :edit]
   end
 
 end
