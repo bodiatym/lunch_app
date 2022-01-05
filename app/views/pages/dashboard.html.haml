@@ -1,9 +1,5 @@
 %section.container
 %h1= "Dashboard"
 %p
-  %li= link_to "Menu Monday", menu_path(1) , class: "btn btn-primary btn-sm mt-10"
-  %li= link_to "Menu Tuesday", menu_path(1) , class: "btn btn-primary btn-sm mt-10"
-  %li= link_to "Menu Wednesday", menu_path(1) , class: "btn btn-primary btn-sm mt-10"
-  %li= link_to "Menu Thursday", menu_path(1) , class: "btn btn-primary btn-sm mt-10"
-  %li= link_to "Menu Friday", menu_path(1) , class: "btn btn-primary btn-sm mt-10"
-  %li= link_to t('home'), home_path, class: "btn btn-primary btn-sm mt-10"
+  %li= link_to t('.menu',day: 'Test Day'), menu_path(1) , class: "btn btn-primary btn-sm mt-10"
+  %li= link_to t('.home'), home_path, class: "btn btn-primary btn-sm mt-10"

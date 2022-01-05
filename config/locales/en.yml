@@ -30,6 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  list: "List"
+  pages:
+    dashboard:
+      menu: "Menu %{day}"
+  menus:
+    show:
+      menu: "Menu %{day}"
   save: "Save"
   home: "Home"
   app_name: "LunchApp"
