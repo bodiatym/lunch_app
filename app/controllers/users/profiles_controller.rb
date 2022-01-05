@@ -10,13 +10,11 @@ module Users
     def edit; end
 
     def update
-      @facade = ::Profiles::EditFacade.new(@profile)
-      if ::Profiles::EditService.call(@profile, profile_params)
-        flash[:success] = t '.success'
-        redirect_to users_profile_path(@profile)
-      else
-        render :edit
-      end
+      return render :edit unless ::Profiles::EditService.call(@profile, profile_params)
+
+      flash[:success] = t('flash.success')
+
+      redirect_to users_profile_path(@profile)
     end
 
     private
@@ -26,11 +24,11 @@ module Users
     end
 
     def set_profile
-      @profile = ::Users::Profile.find(params[:id])
+      @profile = current_user.profile
     end
 
     def profile_params
-      params.require(:users_profile).permit(:surname, :address, :phone, :id)
+      params.require(:users_profile).permit(:surname, :address, :phone)
     end
 
     def authorize_profile!

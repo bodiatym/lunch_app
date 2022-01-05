@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/dashboard' => 'pages#dashboard'
 
   namespace :users do
-    resources :profiles, only: [:show, :update, :edit]
+    resource :profile, only: [:show, :update, :edit]
   end
 
   resources :menus, only: [:show]

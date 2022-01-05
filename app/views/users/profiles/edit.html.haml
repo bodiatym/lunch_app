@@ -1,7 +1,6 @@
 %h1= t('.edit_profile', name: @facade.user_name)
 = form_with(model: @profile) do |f|
-  .field
-    = f.hidden_field :id, value: @facade.profile_id
+  = render "shared/error_messages", object: @profile
   .field
     = f.label :surname
     %br/
@@ -17,5 +16,7 @@
 
     %br
     = f.submit t('save')
+
+%li= link_to t('profile', name: current_user.name), users_profile_path
 %p
   %li= link_to t('home'), home_path, class: "btn btn-primary btn-sm mt-10"
