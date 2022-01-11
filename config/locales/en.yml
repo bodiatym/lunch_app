@@ -37,7 +37,7 @@ en:
   app_name: "LunchApp"
   hello: "Hello world"
   welcome: "Welcome"
-  edit: "Edit "
+  edit: "Edit"
   password: "Password"
   update: "Update"
   delete: "Delete"
