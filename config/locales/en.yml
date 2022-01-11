@@ -32,17 +32,12 @@
 en:
   list: "List"
   pages:
-    dashboard:
-      menu: "Menu %{day}"
-  menus:
-    show:
-      menu: "Menu %{day}"
   save: "Save"
   home: "Home"
   app_name: "LunchApp"
   hello: "Hello world"
   welcome: "Welcome"
-  edit: "Edit"
+  edit: "Edit "
   password: "Password"
   update: "Update"
   delete: "Delete"
@@ -62,6 +57,7 @@ en:
     profiles:
       edit:
         edit_profile: "Edit %{name} Profile"
+        profile: "%{name} Profile"
       show:
         profile: "%{name} Profile"
   admin_panel: "Admin Panel"
@@ -69,3 +65,4 @@ en:
   flash:
     success: "Success"
     not_authorized: "You are not authorized to perform this action."
+  menu: "Menu %{day}"

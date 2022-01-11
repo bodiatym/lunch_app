@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
 class MenusController < ApplicationController
-  before_action :set_menu
+  before_action :set_menu, only: %i[show]
 
-  def show; end
+  def show
+    @facade = ::Menus::ShowFacade.new(@menu)
+  end
+
+  def index
+    @facade = ::Menus::IndexFacade.new
+  end
 
   private
 
