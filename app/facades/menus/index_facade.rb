@@ -2,9 +2,8 @@
 
 module Menus
   class IndexFacade
-    attr_reader :menus
 
-    def initialize
+    def menus
       @menus = Menu.where('date <= ?', Date.current)
     end
   end

@@ -1,4 +1,0 @@
-- if object.menus.any?
-  %ul
-    - object.menus.each do |menu|
-      %li= link_to t('menu',day: menu.date.strftime("%m.%d.%Y")), menu_path(menu.id), class: "btn btn-primary btn-sm mt-10"
