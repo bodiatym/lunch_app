@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  list: "List"
+  pages:
   save: "Save"
   home: "Home"
   app_name: "LunchApp"
@@ -55,6 +57,7 @@ en:
     profiles:
       edit:
         edit_profile: "Edit %{name} Profile"
+        profile: "%{name} Profile"
       show:
         profile: "%{name} Profile"
   admin_panel: "Admin Panel"
@@ -62,3 +65,4 @@ en:
   flash:
     success: "Success"
     not_authorized: "You are not authorized to perform this action."
+  menu: "Menu %{day}"

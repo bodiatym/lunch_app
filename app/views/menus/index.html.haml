@@ -1,0 +1,5 @@
+%section.container
+%h1= "Dashboard"
+%p
+  = render partial: "menus/menu", collection: @facade.menus
+  %li= link_to t('.home'), home_path, class: "btn btn-primary btn-sm mt-10"
