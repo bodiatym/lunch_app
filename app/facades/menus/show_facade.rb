@@ -5,11 +5,7 @@ module Menus
     attr_reader :menu
 
     def initialize(menu)
-      @menu = menu
-    end
-
-    def day_name
-      @menu.date.strftime('%A')
+      @menu = menu.decorate
     end
   end
 end
