@@ -17,16 +17,16 @@ ActiveRecord::Schema.define(version: 2021_12_29_072937) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "course", default: "main", null: false
+    t.string "course", null: false
     t.index ["course"], name: "index_items_on_course"
   end
 
   create_table "menu_items", force: :cascade do |t|
     t.bigint "menu_id", null: false
     t.bigint "item_id", null: false
+    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_menu_items_on_item_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_072937) do
   end
 
   create_table "menus", force: :cascade do |t|
-    t.date "date", default: "2022-01-20", null: false
+    t.date "date", default: "2022-01-21", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
