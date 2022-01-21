@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 2021_12_29_092935) do
     t.index ["course"], name: "index_items_on_course"
   end
 
-  create_table "menu_items", force: :cascade do |t|
+  create_table "meals", force: :cascade do |t|
     t.bigint "menu_id", null: false
     t.bigint "item_id", null: false
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_menu_items_on_item_id"
-    t.index ["menu_id"], name: "index_menu_items_on_menu_id"
+    t.index ["item_id"], name: "index_meals_on_item_id"
+    t.index ["menu_id"], name: "index_meals_on_menu_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 2021_12_29_092935) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "order_items", force: :cascade do |t|
+  create_table "order_meals", force: :cascade do |t|
     t.bigint "order_id", null: false
-    t.bigint "item_id", null: false
+    t.bigint "meal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_order_items_on_item_id"
-    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["meal_id"], name: "index_order_meals_on_meal_id"
+    t.index ["order_id"], name: "index_order_meals_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -80,10 +80,10 @@ ActiveRecord::Schema.define(version: 2021_12_29_092935) do
     t.index ["role"], name: "index_users_on_role"
   end
 
-  add_foreign_key "menu_items", "items"
-  add_foreign_key "menu_items", "menus"
-  add_foreign_key "order_items", "items"
-  add_foreign_key "order_items", "orders"
+  add_foreign_key "meals", "items"
+  add_foreign_key "meals", "menus"
+  add_foreign_key "order_meals", "meals"
+  add_foreign_key "order_meals", "orders"
   add_foreign_key "orders", "users"
   add_foreign_key "profiles", "users"
 end
