@@ -2,8 +2,6 @@
 
 module Profiles
   class EditService < ApplicationService
-    attr_reader :user
-
     def initialize(profile, params)
       super()
       @profile = profile

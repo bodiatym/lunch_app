@@ -1,5 +1,11 @@
 %section.container
 %h1= t('menu', day: @facade.menu_day_name)
-%h2= t('first_course')
-%h2= t('main_course')
-%h2= t('drinks')
+= form_with url: "/orders", method: :post do |f|
+  %h2= t('first_course')
+  = f.collection_select :order, @facade.first_course, :id, :name_with_price,{ include_blank: true  }, { name: 'order[meal_ids][]' }
+  %h2= t('main_course')
+  = f.collection_select :order, @facade.main_course, :id, :name_with_price,{ include_blank: true }, { name: 'order[meal_ids][]' }
+  %h2= t('drinks')
+  = f.collection_select :order, @facade.drinks, :id, :name_with_price,{ include_blank: true }, { name: 'order[meal_ids][]' }
+  %br
+  = f.submit "Submit"
