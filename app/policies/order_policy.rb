@@ -5,4 +5,3 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 end
-
