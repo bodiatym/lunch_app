@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_092935) do
   end
 
   create_table "menus", force: :cascade do |t|
-    t.date "date", default: "2022-01-21", null: false
+    t.date "date", default: "2022-01-26", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  submit: "Submit"
   first_course: "First course"
   main_course: "Main course"
   drinks: "Drinks"
