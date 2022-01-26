@@ -4,7 +4,6 @@ class MenusController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_menu!
 
-
   def index
     @facade = ::Menus::IndexFacade.new
   end
