@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe ::Orders::CreateService do
-  let(:service) { described_class.call(user, params) }
+  let(:order) { described_class.call(user, params) }
   let(:user) { create(:user) }
   let(:meal) { create(:meal) }
   let(:params) do
@@ -12,21 +12,11 @@ RSpec.describe ::Orders::CreateService do
     }
   end
 
-  context 'with meals' do
-    it 'returns true' do
-      expect(service).to eq(true)
-    end
+  it 'create order' do
+    expect(order).to be_an_instance_of(Order)
   end
 
-  context 'without meals' do
-    let(:params) do
-      {
-        meals: []
-      }
-    end
-
-    it "doesn't update params" do
-      expect(service).to eq(false)
-    end
+  it 'save order' do
+    expect(order).to be_persisted
   end
 end

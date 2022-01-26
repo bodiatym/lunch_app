@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    return render :new unless Orders::CreateService.new(current_user, order_params).call
+    @order = Orders::CreateService.new(current_user, order_params).call
+    return render :new unless @order.save
 
     flash[:success] = t('flash.success')
 
