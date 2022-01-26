@@ -2,7 +2,6 @@
 
 module Orders
   class CreateFacade < NewFacade
-
     delegate :persisted?, to: :order, prefix: :order
 
     def initialize(menu, current_user, order_params)
@@ -11,4 +10,3 @@ module Orders
     end
   end
 end
-

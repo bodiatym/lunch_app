@@ -19,4 +19,16 @@ RSpec.describe ::Orders::CreateService do
   it 'saves order' do
     expect(order).to be_persisted
   end
+
+  context 'with invalid params' do
+    let(:params) do
+      {
+        meals: []
+      }
+    end
+
+    it 'order is not saved' do
+      expect(order).not_to be_persisted
+    end
+  end
 end
