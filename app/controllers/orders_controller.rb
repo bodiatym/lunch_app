@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Orders::CreateService.new(current_user, order_params).call
-    return render :new unless @order.save
+    return render :new unless @order.persisted?
 
     flash[:success] = t('flash.success')
 
