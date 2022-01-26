@@ -9,7 +9,7 @@ module Orders
     end
 
     def call
-      @current_user.orders.create(@params)
+      @current_user.orders.new(@params).save
     end
   end
 end

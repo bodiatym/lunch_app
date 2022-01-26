@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Menus
-  class ShowFacade
+module Orders
+  class NewFacade
     attr_reader :menu
 
     delegate :day_name, :meals, to: :menu, prefix: :menu
