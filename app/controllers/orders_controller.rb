@@ -4,15 +4,15 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_order!
   before_action :set_menu, only: %i[new create]
-  before_action :set_new_facade, only: %i[new create]
 
   def new
-    @order = Order.new
+    @facade = ::Orders::NewFacade.new(@menu)
   end
 
   def create
-    @order = Orders::CreateService.new(current_user, order_params).call
-    return render :new unless @order.persisted?
+    @facade = ::Orders::CreateFacade.new(@menu, current_user, order_params)
+
+    return render :new unless @facade.order_persisted?
 
     flash[:success] = t('flash.success')
 
@@ -20,10 +20,6 @@ class OrdersController < ApplicationController
   end
 
   private
-
-  def set_new_facade
-    @facade = ::Orders::NewFacade.new(@menu)
-  end
 
   def set_menu
     @menu = Menu.find(params[:menu_id])

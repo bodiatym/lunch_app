@@ -12,11 +12,11 @@ RSpec.describe ::Orders::CreateService do
     }
   end
 
-  it 'create order' do
+  it 'creates order' do
     expect(order).to be_an_instance_of(Order)
   end
 
-  it 'save order' do
+  it 'saves order' do
     expect(order).to be_persisted
   end
 end

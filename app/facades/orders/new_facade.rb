@@ -2,19 +2,20 @@
 
 module Orders
   class NewFacade
-    attr_reader :menu
+    attr_reader :menu, :order
 
     delegate :day_name, :meals, to: :menu, prefix: :menu
 
     def initialize(menu)
       @menu = menu.decorate
+      @order = Order.new
     end
 
-    def first_course
+    def first_courses
       menu_meals.joins(:item).where(item: { course: ::Item::FIRST }).order(:price).decorate
     end
 
-    def main_course
+    def main_courses
       menu_meals.joins(:item).where(item: { course: ::Item::MAIN }).order(:price).decorate
     end
 
