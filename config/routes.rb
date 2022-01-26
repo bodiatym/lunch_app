@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resource :profile, only: [:show, :update, :edit]
   end
 
-  resources :menus, only: [:show, :index]
-
+  resources :menus, only: [:index] do
+    resources :orders, only: [:create, :new]
+  end
 end

@@ -10,6 +10,7 @@ class User < ApplicationRecord
   }
 
   has_one :profile, dependent: :destroy, class_name: 'Users::Profile'
+  has_many :orders, dependent: :destroy
 
   def owner?(obj)
     obj.user == self
