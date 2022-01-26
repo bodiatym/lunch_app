@@ -5,12 +5,11 @@ class OrdersController < ApplicationController
   before_action :authorize_order!
 
   def create
-    if Orders::CreateService.new(current_user, order_params).call
-      redirect_to menus_path
-      flash[:success] = t('flash.success')
-    else
-      redirect_to menu_path
-    end
+    return redirect_to menus_path unless Orders::CreateService.new(current_user, order_params).call
+
+    flash[:success] = t('flash.success')
+
+    redirect_to menu_path
   end
 
   private
