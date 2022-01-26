@@ -6,7 +6,12 @@ module Orders
 
     def initialize(menu, current_user, order_params)
       super(menu)
-      @order = Orders::CreateService.new(current_user, order_params).call
+      @current_user = current_user
+      @order_params = order_params
+    end
+
+    def order
+      @order ||= Orders::CreateService.new(@current_user, @order_params).call
     end
   end
 end

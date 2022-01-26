@@ -1,6 +1,6 @@
 %section.container
 %h1= t('menu', day: @facade.menu_day_name)
-= form_with model: [@menu, @facade.order] do |f|
+= form_with model: [@facade.menu, @facade.order] do |f|
   =render "shared/error_messages", object: @facade.order
   %h2= t('first_course')
   = f.collection_select :order, @facade.first_courses, :id, :name_with_price, { include_blank: true  }, { name: 'order[meal_ids][]' }

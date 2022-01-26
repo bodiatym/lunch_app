@@ -2,13 +2,16 @@
 
 module Orders
   class NewFacade
-    attr_reader :menu, :order
+    attr_reader :menu
 
     delegate :day_name, :meals, to: :menu, prefix: :menu
 
     def initialize(menu)
-      @menu = menu.decorate
-      @order = Order.new
+      @menu = menu
+    end
+
+    def order
+      Order.new
     end
 
     def first_courses

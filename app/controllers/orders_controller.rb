@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
   private
 
   def set_menu
-    @menu = Menu.find(params[:menu_id])
+    @menu = Menu.find(params[:menu_id]).decorate
   end
 
   def authorize_order!

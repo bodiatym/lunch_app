@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'User make order', type: :feature do
+describe 'User makes order', type: :feature do
   let(:user) { create(:user) }
   let(:menu) { create(:menu, :with_items) }
 
